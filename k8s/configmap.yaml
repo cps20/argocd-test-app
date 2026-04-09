@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-test-html
+  labels:
+    app: argocd-test
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ArgoCD Test App</title>
+        <style>
+            body { 
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+                background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+                color: white; 
+                display: flex; 
+                justify-content: center; 
+                align-items: center; 
+                height: 100vh; 
+                margin: 0; 
+            }
+            .container { 
+                text-align: center; 
+                background: rgba(255, 255, 255, 0.1); 
+                padding: 3rem; 
+                border-radius: 1rem; 
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); 
+                animation: fadeIn 1s ease-in-out;
+            }
+            h1 { 
+                font-size: 3rem; 
+                margin-bottom: 1rem; 
+                background: linear-gradient(to right, #00f2fe, #4facfe); 
+                -webkit-background-clip: text; 
+                -webkit-text-fill-color: transparent; 
+            }
+            p { 
+                font-size: 1.25rem; 
+                color: #e2e8f0; 
+                margin-bottom: 2rem;
+            }
+            .badge { 
+                display: inline-block; 
+                padding: 0.5rem 1.5rem; 
+                background: #ef4444; 
+                color: white;
+                border-radius: 9999px; 
+                font-size: 1rem; 
+                font-weight: bold; 
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>¡Hola ArgoCD! 🚀</h1>
+            <p>Esta es una aplicación web de prueba, sincronizada e instalada localmente con éxito.</p>
+            <div class="badge">Versión 1.0.0</div>
+        </div>
+    </body>
+    </html>
