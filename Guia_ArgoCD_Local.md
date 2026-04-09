@@ -96,7 +96,32 @@ kubectl port-forward svc/argocd-test-service 8080:80
 
 ---
 
-## 📚 6. Referencias Bibliográficas
+## 🔄 6. Cómo retomar el proyecto (Días posteriores)
+Dado que Minikube guarda el "estado" de Kubernetes en su máquina virtual, no es necesario volver a instalar ArgoCD ni la aplicación al reiniciar la computadora. Sin embargo, los túneles de red locales se cierran.
+
+Para volver a probar el proyecto al día siguiente, debes ejecutar esta pequeña rutina en terminales:
+
+1. **Despertar el clúster**:
+   ```bash
+   minikube start
+   ```
+   *¿Por qué?* Enciende la máquina virtual y levanta todos los contenedores de Kubernetes que instalamos previamente. Toma un par de minutos en estabilizar todo.
+
+2. **Reconectar la interfaz de ArgoCD (Opcional)**:
+   ```bash
+   minikube tunnel
+   ```
+   *¿Por qué?* El panel de ArgoCD usa un "LoadBalancer". Al estar en un entorno local y no en la nube de AWS/GCP, Minikube requiere mantener este comando corriendo en una terminal abierta para simular una IP de balanceador y que puedas entrar a la UI administrativa.
+
+3. **Reconectar el acceso a tu Página Web**:
+   ```bash
+   kubectl port-forward svc/argocd-test-service 8080:80
+   ```
+   *¿Por qué?* Crea un puente directo temporal entre el puerto 80 del servicio de tu red en Kubernetes hacia el puerto local 8080 de tu computadora en Windows, garantizando que el navegador pueda entrar a `http://localhost:8080`.
+
+---
+
+## 📚 7. Referencias Bibliográficas
 * [Argo CD & Kubernetes: GitOps the right way](https://medium.com/@ebane2022/argo-cd-kubernetes-gitops-the-right-way-dca7b6fc1a77)
 * [Configure Access to Multiple Clusters (Kubernetes Docs)](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/)
 * [Getting Started - Argo CD Official Documentation](https://argo-cd.readthedocs.io/en/stable/getting_started/)
