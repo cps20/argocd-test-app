@@ -93,3 +93,10 @@ kubectl port-forward svc/argocd-test-service 8080:80
 **Resultado:** Aplicación web exitosamente visualizada en `http://localhost:8080`!
 
 ![Aplicación funcionando en localhost](evidencia_argocd.png)
+
+---
+
+## 📚 6. Referencias Bibliográficas
+* [Argo CD & Kubernetes: GitOps the right way](https://medium.com/@ebane2022/argo-cd-kubernetes-gitops-the-right-way-dca7b6fc1a77)
+* [Configure Access to Multiple Clusters (Kubernetes Docs)](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/)
+* [Getting Started - Argo CD Official Documentation](https://argo-cd.readthedocs.io/en/stable/getting_started/)
