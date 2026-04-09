@@ -91,3 +91,5 @@ Para by-passear este problema y ver la aplicación funcionando, abrimos los puer
 kubectl port-forward svc/argocd-test-service 8080:80
 ```
 **Resultado:** Aplicación web exitosamente visualizada en `http://localhost:8080`!
+
+![Aplicación funcionando en localhost](evidencia_argocd.png)
